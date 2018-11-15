@@ -1,4 +1,4 @@
-# Gesture-Recognition-
+# Hand-Gesture-Recognition
 
 ***Tips***
   
