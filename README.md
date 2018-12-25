@@ -1,4 +1,4 @@
-# Hand-Gesture-Recognition
+# Hand-Gesture-Recognition   ![](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 ### About
 An online hand gesture recognition system that facilitates interaction between a human and [Nao](https://www.thisnao.com/) robot using hand gesture recognition.<br/>
