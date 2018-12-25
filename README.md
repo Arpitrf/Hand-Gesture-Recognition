@@ -97,3 +97,6 @@ function frameworkpython {
   import naoqi
   ```
 
+### Creators
+  - [Arpit Bahety](https://github.com/Arpitrf)
+  - [Ankur Dengla](https://github.com/ankurdengla1996)
