@@ -66,7 +66,34 @@ function frameworkpython {
 
 **2. TensorFlow (mac OSX):**
    - Python 3.7 does not work.
-   - brew unlink python
-   - Installs Python 3.6.5 - brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb
+   ```
+   brew unlink python
+   ```
+   - Install Python 3.6.5
+   ```
+   brew install https://raw.githubusercontent.com/Homebrew/homebrewcore/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb
+```
 
+**3. Setting up Naoqi on Linux:**
+  - Create a virtual environment with Python version as 2.7. In case of Anaconda - 
+  ```
+  conda create -n yourenvname python=2.7
+  ```
+  - Activate the environment.
+  ```
+  source activate yourenvname
+  ```
+  - Download Naoqi from [here](https://community.ald.softbankrobotics.com/en/dl/ZmllbGRfY29sbGVjdGlvbl9pdGVtLTEyNDEtZmllbGRfc29mdF9kbF9leHRlcm5hbF9saW5rLTAtOGVlYTk3?width=500&height=auto)<br />
+  **Note -** Make sure you are using 64-bit Linux. Also, the above link is for downloading [Pepper](https://www.softbankrobotics.com/emea/en/robots/pepper) python SDK which works just as well.
+  ###
+  - Extract the tar file downloaded.
+  ###
+  - Set environment variable PYTHONPATH -
+  ```
+  export PYTHONPATH=${PYTHONPATH}:/path/to/python-sdk/lib/python2.7/site-packages
+  ```
+  - Check the installation by running python and then importing naoqi using -
+  ```
+  import naoqi
+  ```
 
