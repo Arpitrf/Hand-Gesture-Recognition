@@ -25,12 +25,13 @@ The model is a 3-D CNN (3 dimensional Convolutional Neural Network) built using 
 ### Description of Codes
 The codes are present in the Final Codes folder in the main directory. The function of each file is as follows -
   - **server.py -** Start a server that accepts client connections and then, calls the predictor, and then returns the predicted label to the client for further action.
-  - **client.py -** Start a client that connects with the server, then receives the predicted label from the server and sends the corresponding action to Nao to perform.
-  - **predictor.py -**  Called by server. It reads video frames from the camera of Nao. It then saves the data to the Sample_images directory and then calls the model. It finally returns the prediction to the server.
+  - **client.py -** Start a client that connects with the server. It then reads the video frames from the camera of Nao, saves them to the directory Sample_images and informs the server that the sample has been read. It then receives the predicted label from the server and sends the corresponding action to Nao to perform.
+  - **predictor.py -**  Called by server. It reads the data from the Sample_images directory and then calls the model. It finally returns the prediction to the server.
   - **model.py -** Defines the actual pytorch model used for predictions.
 
 ### How to Run
 It is recommended to use [Anaconda](https://www.anaconda.com/) or some other virtual environment as the server.py runs in an environment with Python3 with Pytorch installed whereas the client.py runs in another virtual environment with Python2 and Naoqi installed since Naoqi has no release for Python3.<br />
+**Note -** Run the files server.py and client.py on different terminals on the same machine. <br />
 The steps for running the codes provided are - 
   - Activate environment in terminal with Python3 and Pytorch. (Considering name of environment as pytorch in case of Anaconda)
   ```
