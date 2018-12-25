@@ -16,6 +16,11 @@ The model is a 3-D CNN (3 dimensional Convolutional Neural Network) built using 
 | Pulling two fingers in | Move forward by 20 cm |
 
 ### Pre-requisites
+  - [Python 3](https://www.python.org/download/releases/3.0/)
+  - [Python 2.7](https://www.python.org/download/releases/2.7/)
+  - [Pytorch](https://pytorch.org/)
+  - [Naoqi](http://doc.aldebaran.com/2-1/naoqi/index.html)
+  - [Anaconda](https://www.anaconda.com/) or some other virtual environment
 
 ### Description of Codes
 The codes are present in the Final Codes folder in the main directory. The function of each file is as follows -
@@ -24,13 +29,30 @@ The codes are present in the Final Codes folder in the main directory. The funct
   - **predictor.py -** Reads the frames from the Sample_images directory, calls the model, and then sends the prediction to the server.
   - **model.py -** Defines the actual pytorch model used for predictions.
 
-### Steps to Run
-  - 
-
+### How to Run
+It is recommended to use [Anaconda](https://www.anaconda.com/) or some other virtual environment as the server.py runs in an environment with Python3 with Pytorch installed whereas the client.py runs in another virtual environment with Python2 and Naoqi installed since Naoqi has no release for Python3.<br />
+The steps for running the codes provided are - 
+  - Activate environment in terminal with Python3 and Pytorch. (Considering name of environment as pytorch in case of Anaconda)
+  ```
+  source activate pytorch
+  ```
+  - Run server.py in this environment.
+  ``` 
+  python server.py
+  ```
+  - Activate the other environment in another terminal with Python2 and Naoqi. (Considering name of environment as nao in case of Anaconda)
+  ```
+  source activate nao
+  ```
+  - Run client.py in this environment. **Note -** Edit the IP of the HOST to your server IP and also change the IP of Naoqi to the IP of your Nao.
+  ```
+  python client.py
+  ```
+  - Press 'S' to start capture, perform the gesture in front of the camera and then press 'Q' to end the capture.
 
 ### Tips
   
-1. To use matplotlib in virtualenv (mac OSX) paste following in ~/.bash_profile:
+**1. To use matplotlib in virtualenv (mac OSX) paste following in ~/.bash_profile:**
 
 ```
 function frameworkpython {
@@ -42,7 +64,7 @@ function frameworkpython {
 }
 ```
 
-2. TensorFlow:
+**2. TensorFlow (mac OSX):**
    - Python 3.7 does not work.
    - brew unlink python
    - Installs Python 3.6.5 - brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb
