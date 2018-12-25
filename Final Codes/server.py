@@ -20,7 +20,6 @@ s.listen(1)
 conn, addr = s.accept()
 print('Connected by', addr)
 while 1:
-    #print("asd")
     data = conn.recv(1024)
     print("hello", data)
     if data:

@@ -101,8 +101,6 @@ class ImageWidget(QWidget):
                              self._alImage[1],           # Height.
                              QImage.Format_RGB888)
 
-        # print (flag)
-
         if flag == 1:
             if i < 10:
                 filename = './temp/test_img/0' + str(i) + '.png'
@@ -116,7 +114,6 @@ class ImageWidget(QWidget):
         Called periodically. Retrieve a nao image, and update the widget.
         """
         self._updateImage()
-        # print('aaa')
         self.update()
 
 
@@ -137,10 +134,6 @@ class ImageWidget(QWidget):
         global i
 
         if e.key() == QtCore.Qt.Key_S:
-            # files = glob.glob('./temp/test_img/*')
-            # for f in files:
-            #     os.remove(f)
-
             flag = 1
             i = 0
             print ("Start Capture")
@@ -150,8 +143,6 @@ class ImageWidget(QWidget):
 
             s.sendall('Event')
             data = s.recv(1024)
-            # s.close()
-            # print 'Received', repr(data)
             ans = int(data.encode('hex'), 16)
             print(ans)
 
@@ -244,10 +235,6 @@ class ImageWidget(QWidget):
         
             self.close()
             s.close()
-
-        # elif e.key() == QtCore.Qt.Key_X:
-        #     self.close()
-        #     s.close()
 
 if __name__ == '__main__':
     IP = "172.16.21.202"  # Replace here with your NaoQi's IP address.
